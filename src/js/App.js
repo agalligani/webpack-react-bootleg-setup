@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import Form from "./components/Form";
 
-class Form extends Component {
+class App extends Component {
   constructor() {
     super();
 
@@ -23,15 +24,15 @@ class Form extends Component {
 
   render() {
     return (
-      <form>
-        <input
-          type="text"
-          value={this.state.value}
-          onChange={this.handleChange}
-        />
-      </form>
+      <div>
+        <div>Hi</div>
+        <Form></Form>
+      </div>
     );
   }
 }
 
-export default Form;
+export default App;
+
+const wrapper = document.getElementById("container");
+wrapper ? ReactDOM.render(<App />, wrapper) : false;
