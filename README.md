@@ -1,4 +1,4 @@
-# webpack-react-setup
+# webpack-react-bootleg-setup
 
 This template is a setup for using react-bootstrap along with a webpack setup including babel. 
 
