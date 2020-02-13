@@ -11,7 +11,7 @@ class About extends Component {
 
   render() {
     return (
-      <div>
+      <div class="container">
         <h3>Basic About Example</h3>
         <p>
           A navigation bar is a navigation header that is placed at the top of

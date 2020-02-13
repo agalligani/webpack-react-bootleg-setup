@@ -3,30 +3,12 @@ import ReactDOM from "react-dom";
 import MainNav from "./components/MainNav";
 import About from "./components/About";
 import Home from "./components/Home";
+import Contact from "./components/Contact";
 import Users from "./components/Users";
 // import Home from "./components/Home";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      value: ""
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    const { value } = event.target;
-    this.setState(() => {
-      return {
-        value
-      };
-    });
-  }
-
   render() {
     return (
       <Router>
@@ -59,6 +41,10 @@ function RenderAbout() {
 
 function RenderUsers() {
   return <Users />;
+}
+
+function RenderContact() {
+  return <Contact />;
 }
 
 export default App;
