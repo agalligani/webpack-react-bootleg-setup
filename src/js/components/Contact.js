@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-class Home extends Component {
+class Contact extends Component {
   render() {
     return (
-      <div class="container">
-        <h3>Basic Navbar Example</h3>
+      <div>
+        <h3>Basic Contact Example</h3>
         <p>
           A navigation bar is a navigation header that is placed at the top of
           the page.
@@ -14,4 +14,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Contact;

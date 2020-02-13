@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 
 class Home extends Component {
+  state = {
+    links: [
+      { text: "Home", href: "/home", sublinks: null },
+      { text: "About", href: "/about", sublinks: null },
+      { text: "Contact", href: "/about", sublinks: null }
+    ]
+  };
+
   render() {
     return (
       <div class="container">
