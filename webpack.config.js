@@ -1,6 +1,15 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const OpenBrowserPlugin = require("open-browser-webpack-plugin");
+const path = require("path");
 
 module.exports = {
+  context: __dirname,
+  entry: ["@babel/polyfill", "./src/index.js"],
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "main.js",
+    publicPath: "/"
+  },
   module: {
     rules: [
       {
@@ -32,6 +41,14 @@ module.exports = {
         ]
       },
       {
+        test: /\.(png|jpg|jpeg|svg|gif)$/,
+        use: [
+          {
+            loader: "file-loader" // load images
+          }
+        ]
+      },
+      {
         test: /\.(scss)$/,
         use: [
           {
@@ -56,10 +73,15 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    historyApiFallback: true
+  },
   plugins: [
     new HtmlWebPackPlugin({
+      title: "development",
       template: "./src/index.html",
       filename: "./index.html"
-    })
+    }),
+    new OpenBrowserPlugin({ url: "http://localhost:8080", delay: 0 })
   ]
 };
